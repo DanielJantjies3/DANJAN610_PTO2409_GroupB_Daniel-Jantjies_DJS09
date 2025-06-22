@@ -5,7 +5,7 @@ import { LoyaltyUser } from './enum'
 
 export function showReviewTotal(value: number, reviewer: string, isLoyalty: LoyaltyUser) {
     const iconDisplay = LoyaltyUser.GOLD_USER ? '⭐' : ''
-    reviewTotalDisplay.innerHTML = 'review total ' + value.toString() + '| last reviewed by ' + reviewer + ' ' + iconDisplay
+    reviewTotalDisplay.innerHTML = value.toString() + ' Review' + makeMultiple(value) + '| last reviewed by ' + reviewer + ' ' + iconDisplay
 }
 
 export function populateUser(isReturning : boolean, userName: string ) {
@@ -13,4 +13,10 @@ export function populateUser(isReturning : boolean, userName: string ) {
         returningUserDisplay.innerHTML = 'back'
     }
     userNameDisplay.innerHTML = userName
+}
+
+export function makeMultiple(value: number) :string {
+    if (value > 1 || value == 0 ) {
+        return 's'
+    } else return ''
 }
