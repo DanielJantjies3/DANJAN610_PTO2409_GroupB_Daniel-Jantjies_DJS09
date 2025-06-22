@@ -20,6 +20,8 @@ enum LoyaltyUser {
     BRONZE_USER = 'BRONZE_USER'
 }
 
+
+
 // Reviews
 const reviews: Review[] = [
     {
